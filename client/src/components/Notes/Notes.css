@@ -1,0 +1,18 @@
+
+.notes {
+  background-color: rgb(245, 245, 235);
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  position: relative;
+
+  max-height: 100vh;
+  overflow-y: auto;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  
+}

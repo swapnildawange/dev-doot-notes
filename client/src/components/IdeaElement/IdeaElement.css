@@ -1,0 +1,27 @@
+.ideaElement {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "ideaElement__left ideaElement__right";
+  padding: 1rem 1rem;
+  align-items: center;
+}
+.idea__container > .ideaElement__left {
+  grid-area: ideaElement__left;
+}
+.ideaElement__left h4,
+p {
+  padding: 0.15rem 0;
+}
+.ideaElement > .ideaElement__right {
+  grid-area: ideaElement__right;
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+}
+.my-active .ideaElement {
+  text-decoration: none;
+  background-color: whitesmoke;
+}

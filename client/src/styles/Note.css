@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.note {
+  /* max-width: calc(100vw / 5); */
+  min-width: 15ch;
+  height: fit-content;
+
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid whitesmoke;
+  border-bottom: 1px solid whitesmoke;
+
+  margin: 10px;
+  padding: 0.75rem;
+  border-radius: 0.625rem;
+  background-color: whitesmoke;
+  /* box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 0 14px -7px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.note > h3 {
+  padding-left: 5px;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.25px;
+}
+.note__underline {
+  border: 0;
+  padding: 0;
+  /* height: 1px; */
+  /* width: 100%; */
+  /* background: rgba(51, 51, 51, 0.5); */
+  /* opacity: 0.5; */
+  margin: 0.2rem;
+  border: 0.2px solid gray;
+}
+.note__content > p {
+  padding: 0.5rem 0.5rem;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.25px;
+}
+.note__content {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.note__buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.note__onHoverContainer {
+  /* display: none; */
+  opacity: 0;
+  z-index: 30;
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  margin-top: 0.75rem;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  width: max-content;
+  height: max-content;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.note__onHoverContainer::after {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 40%;
+  z-index: 35;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: drop-shadow(16px 16px 10px black);
+  top: -40%;
+  left: 45%;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%, 100% 100%, 0 100%);
+}
+.note:hover .note__onHoverContainer {
+  opacity: 1;
+}
+.note__buttons > button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.note__buttons .MuiSvgIcon-root {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+.note__time {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+.note .MuiSvgIcon-root {
+  color: gray;
+}
+
+.note .MuiSvgIcon-root:hover {
+  color: black;
+}
