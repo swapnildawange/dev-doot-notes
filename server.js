@@ -22,7 +22,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 //now please load my static html and css files for my express app, from my /dist directory
 app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname,"index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 //DB config
 
