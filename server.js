@@ -20,10 +20,7 @@ app.use(cors());
 app.use("/", router);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 //now please load my static html and css files for my express app, from my /dist directory
-app.use(express.static(path.join(__dirname, "client/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+
 //DB config
 
 const connection_url =
@@ -50,10 +47,9 @@ db.once("open", () => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-
-  app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  app.use(express.static(path.join(__dirname, "client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
   });
 }
 
