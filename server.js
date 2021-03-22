@@ -24,8 +24,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 //DB config
 
 const connection_url =
-  process.env.MONGO_CONNECTION_URL ||
-  "mongodb+srv://devDooot:Sw@pnil3149@cluster0.0mnuf.mongodb.net/notesDB?retryWrites=true&w=majority";
+  process.env.MONGO_CONNECTION_URL ;  
 
 mongoose.connect(connection_url, {
   useNewUrlParser: true,
