@@ -69,10 +69,10 @@ function Header() {
         </div>
       </div>
       <Switch>
-        <Route exact path="/notes" component={Notes}></Route>
         <Route exact path="/idea" component={Idea}></Route>
         <Route exact path="/saved" component={Saved}></Route>
         <Route exact path="/trash" component={Trash}></Route>
+        <Route path="/" component={Notes}></Route>
       </Switch>
     </BrowserRouter>
   );
